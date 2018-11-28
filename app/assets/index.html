@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<!--
+	Wh... How did you have the access the source code...??! Being X...!
+
+	::////////////////////:::::::::::::///:::::::/++////////+//:------:/+o///::-----:---------://++o++++++++++////////////:::::::-----------::::::////////
+	://///////////////////::::::::::::::::--.....//--------------------:------://:-:o//:-----------:/+o++++++++///////////:::::-------------:::::::://////
+	////////////////////////::::::::::::--....`.:o-------------------------------/+://-:+:-------------:+oo++++///////////:::::---------:----::::::::::///
+	/////////////////////////::::::::::---..-:/::+---------------------::---------:+/o---/+:--------------:++++///////////::::::---::::::::--::::::::::://
+	//////////////////////////::::::::---://:---//----------:+:---------/:----------/s:---:+:----------------/++/////////::::::::::::::::::::::::::::::///
+	//////////++++++++////////:::------://------+:-----------://-......--//----------//----:+:-----------------:++///////::::::::::::::::::::::///////////
+	///////+++++++++++////////::-----:+/:-------+:---------....-/:--------//---------:+-----:+-------------------/+//////::::::::::/:////::://////////////
+	://////+++++++++++////////::--:/+o:---------+-----......-----:/:-------+/--------:+-----//--------------------:++:::::::::::::::::///::://///////////+
+	:://///++++++++++++///////::://:+:---------:+-.....------------:/:-----:+:--------+----:/-----------------------:+:-.-----:::::::::::::://///+++++++++
+	::////+++++++++++++//////::/+::+:--------..-+..---:--------------://:---/+-------:+---/+-------------------------:+/..`....--:::::::::://////+++++++++
+	//////++++++++++++++//////+:--+/-----......:+-----//---------------:///:-+:------:/--+/----------------------------/o:.....--::::::::::::////+++++++++
+	///////++++++++++++/////+/---:/--...--.----//------++-----------------://+o:-----+/:+s:-------------//--------------/s+-....---------:::::////++++++++
+	/////////++++++////////+:-----.....:+------:/------/+//-------------------:://///oo/:+:--------------/+:-------------/s+-..------------::::////+++++++
+	/////////////////////++:---......-:+:------:/------+:-:/:----------------------://:--//---------------:+:-------------/o+--------------:++:://////////
+	////////////////////+o:-.....-----+:-------:+-----:+----://------------------://:----:+--/+:-----------:+:-------------+/++/::-------:+o:::::::://////
+	+++++++++++////////+o-.....------//--------:+-----//------://::-----------:/+/:------:o--:+o/:----------:+:------------:+:+/::////////+:---:::::::::::
+	++++++++++++++////+o-...--------:+:---------+:----+:--/-----::///:::::::///://--------o:--:+oo/:---------/+-------------:-:+/------://-------:::::::::
+	++++++++++++++++++o:..----------+:----------//---:+--:o---------:::/oo+/:---:o:-------o:----+ooo/:--------+/----------------+:---://:------------::::-
+	++++++++++++++++++/------------:+-----------:o:--//--:o-----/:------:+o+:----o/-------o+/:--:ooooo/:------:+:---------------:+:://::------------------
+	oooooooo+oo+++++oo:------------+:------------//--+:-:+o:----+o/-------:+o+/:-+o:------osoo+/::oooooo+:-----:o:---------------/o/:::::-----------------
+	ooooooooo++++++os/------------:+-------------:+:-+::+os:----oso/:-------:+oo++s/------osooooooossooooo/:----/+----------------+/::::::::::------------
+	oooooooo+++++++++-------------+:------------:+/+:+/+oos/---:oooo+:--------/+oooo------osoooossoosooooooo/:--:o:---------------:+::::::::::::::-:------
+	ooo++++++++++/:o:------------:+:-----------:+/-/+ooooos+---:o++oso:---------:+os:-----o/:+sssoooossooooooo+:-/+----------------//::::::::::::::::-----
+	oooooo+++o+/:-/+-------------:+-----------/o+:-/osoooo+o:--:o++++oo/----------/o+-----o:/o/:+ooooossoooooooo+/o:---------------:o:::::::::::::::::----
+	ooooooo++:----+:-------------:+----::---:+oo/:+sssoo+:-+/--:o+:::/+o+:---------:o-----oso:----:/+oossooooooooos:----------------o/::://////:::::::----
+	ooso+/:------:+--------------:+----::/++oooo+ossoo+:---:+--/o/-----:/+:---------+:--:/s+----------:/+osooooooos/-----/:---------+//////////:::::::::::
+	++ooo++//:::-//--------------:/-----:/oosssoosso/:------+/-/+---------:/:-------/+-:++s///++++/:----::+ssssoooso-----+:---------/+/////////:::::::::::
+	+++++++++++++s:--------------:+:://+ooooooossoo/:-------:+://-----------://:::--:+/+/+o/::::::/++ossyyyyyyssssss:---:+----------:o//////////::::::::::
+	+++++++++++++s:---------------oooooooooooooo+::/+oooo+/::++//-----:-:/----:/o/-:+s//+/o/+osyyyyyyyyyyyhhhhhhhhyy/---+/----------:o/////////////::::://
+	+++++++++++++o----------------ooooooosssyyyssooooooosooo+oossooosso:oo------/ysoos+++syyyyso+//:::://+oyhddhhhys/--:o:----------:o////////////////////
+	++++++++++oooo----------------+sooooossyhyyyyyyyyyyyyyyyyysys:::/::+s+------:os++so+oyys+/:--........-:/+yddhyyy+::o/----/+-----:o////////////////////
+	+++++++++ooooo----------------/sosssyyyhdhhhyo+++++++osyyhdds:---:/+/:-------//::o/oys/:-..............-:/sddhyyyoo/----:o+-----/s+///////////////////
+	+++++++ooooooo----------------:soo++shyhdds+/::-.......-:/syh+-------------------ooos+-.....:/+o+:......-//hdhyhs++----:+o+-----++/++/////////////////
+	ooooooooooooss:----------------++oyyhyhdh+//:......----....-/ys:-----------------o/:s-.....+s+osos/......:/hddhhso:---:+oo+-----o:-:/++///////////////
+	oooooooossssss/--------//------:+:/+hddd+/:-.....:++/ooo/...../+-----------------o:/+.....-sosyyos+......:/dddhys/---:oooo/----/o-----::////+++///+++/
+	oooooooossssss+--------:+/:-----+syhhddy//:.....:yosyyyoss.....------------------+:+:......:+o++o/......./sddhyy/---/ooooo/--:+s/---------:::://++++//
+	ooooooossssssss/--------/o+:----:+/ydddh/:-.....:yossoo+os.....-----------------:+//-........---........:sddhhs/:-:/oooooo::/ooo:------:++o+++////////
+	ssssssosssssssss:-------:ooo/---:oyhhddds/.......-/+/+++/-.....-----------------/++---...............-:shddhhys/-:+ooooooo/+ooso---------::://++///:::
+	sssssssssssssssso:-------+ooo+:---/oyhhhdh+:..................------------------oo::/::--::::::::://oyhdhhyo::::/oooooooooooosso:--------------:/+/:::
+	sssssssoooooooso/+:------:ooooo/:--:o/::ohyys+/::-------::://--------:/+++/:---:o:--:///:::::::::::::/oo+/::--:+oooooooooooos//so+/:-------------:/+/:
+	sooooooooooooo+:-:+:------/ooooo+/:-://-:----:::/::://::::----------://++:-::-:+:------------------://:----::+ooooooooooooss/-/soooo+/::-----------:+/
+	ooooooo+oo+++/-:--:s+/::---+ooooooo/:-:+:-------------------------------+---://:-------------://////:::::/++ooooooooooooosso--/soooooooo++//:::-----/+
+	ooooooooooo+://+/+os+oo++/::ooooooooo+::///:-------------------------------------------------:+oooooooooooooooossooooooossoo--/soosso+++++++++++:---/+
+	oooooosssso+/+ooooos:/oooooooooooooooooo+//++//:------------------------------------------------:/+ooooooooooossoooooossoooo--+soooo+:----------:+::+:
+	ooooooooo/:/ooooooos/-:ssooooooooooooooooooooooooo+:--------------------:///:-----------------------::///////+soooossssooooo--/soooooo+:-----..--+++:-
+	ooo+++o/-:+oooooooos/--ossoooooooooooooooooossoo+/:-------------------:/o++/:---------------------------:/+oosssssssooooooos:-+so++/++oo/--------+:---
+	o++++o:-:ooooooossss+--ossssoooossssssssssssooooooo+:--.-----------------::://////::------------------------/ysooooooooooo+o:-++:------::-------------
+	++++o/-:ooo++++++++oo--+soossssoooooooooooooooooo+:-://------------://++ooo++///+sso/:---------------------:ysoooooo++/::::o:-+/----------------------
+	++++o/-++///////++++o:-/o+++osssssooooooooooo+/:----://:-------/oso++/::-.....-://+syo/+/:/:--------------:ssoso+/:::::----o:-+:----------------------
+	/////+/o////////////o:-/o//+soooosssssss//:--------------:/--:+o++//////////////:::-::/oy/:--------------:ssooss+/:--------o:-o-----------------------
+	::::::/oo/::::::::::+/-:o:/soooooooooooss/--------------:+s-:/:--------------....--------:--------------+ysssoooos+--------o::o-----------------------
+	::::::::/++::::::::/+/-:o:/sso++oooyysooooo/:::----------::-------:::------::/++:://:---------------:/+od+/+y//+osso---...-o:/+--------..-------------
+	::::::::::::::::::://+--o/+s+/:::::/oo/////++++oo+//:----:---------:/oooooooo+++//:----------:/oy++oo+//os/oy/:::/+so------o:++---------...-----------
+	::::::::::::::::::::/o:-o/++////::::/s+////////////+++oo+hs+:--------://++///+so--------::/osssooo///////os/+oss:::/+:----:o:o:-...-----....----------
+	::::::::::::::::::://o:-++/////////ss/////////////+++oossysssso/::+o++/:/+ossssy+oosssssyyssoo+///////////+//+y/:::::::---/o:o--..------.....---------
+	::::::::::::::///////++-++/////////oyo//////////////++oosssssssssyyhysssssssssssssssssssssssoo+//////////////oy+:::::::::-/+:o------------...---------
+	:::::::::::::::::::::/o-/o/:////////sy+oo++/////////////++ossssssyyyhysssssssssssssssssssssoo++++oosssyyyyyyhdy+///:::::::++/+------------------------
+	///////////::::::::::/o::o::::::::::++/+hyyyyyys+/////////+ossssssshhssssssssssssssssssssysssyyyyyyyyyyyyyyyyyy///////::::o/+/----...-----------------
+	//////////////////////o/:o/////:/:::::/yyyyyyyhhyyyyysso+++ossssssssdhysssssyyyyyyyyhhhhyyyyyyyyyyyyyyyyyyyyyyh+/////:::::s:o---....------------------
+	//////////////////////++:o////////////oyyyyyyyyyyyyyyyyyyyyyyhhhhhhhddhhhhdddhhhhhhdhhyyyyyyyyyyyyyyyyyyyyyyyyhs////:::::/o/+-------------------------
+	:::////////////////////o:++///////////yyyyyyyyyyyyyyyyyyyyyyyyyyyyhhhhhdddddhhhhhhhhyyyyyyyyyyyyyyyyyyyyyyyyyyyh////::::-/o+/-------------------------
+	:::::://///////////////+//o:::::::::/oyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyhhdmmddhhhhhyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyh+///::::-o/o:-------------------------
+	:::::::::::::::::::::::/+:o:::::::::/yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyydhhddhyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy+//:::::o/o--------------------------
+
+	-->
+
+	<meta charset="UTF-8">
+
+	<meta name="keywords" content="Youjo Senki, Tanya, Saga of Tanya the Evil, Being X, Viktoriya Ivanovna Serebryakov, Tanya von Degurechaff, moe, waifu, loli, mary sue, crazy, cute, anime, manga, light novel">
+	<meta name="description" content="Discover why Satania is the best character and waifu from Gabriel Dropout, and, maybe, from every anime and manga out there!">
+	<meta name="author" content="ikuper">
+	<meta name="theme-color" content="#374B40">
+
+	<link rel="icon" sizes="192x192" href="http://tanya.moe/img/favicon_big.png">
+	<link rel="apple-touch-icon" href="https://tanya.moe/img/favicon_big.png">
+	<meta name="msapplication-square310x310logo" content="http://tanya.moe/img/favicon_big.png">
+
+	<meta property="og:title" content="Tanya: The best Waifu. Ever." />
+	<meta property="og:url" content="http://tanya.moe" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Youjo Senki is a good show, no really, it is, if you don't believe me, this website will convince you." />
+
+	<meta property="og:image" content="http://tanya.moe/img/favicon_big.png" />
+	<meta property="og:image:width" content="425" />
+	<meta property="og:image:height" content="425" />
+
+	<link rel="alternate" href="http://tanya.moe/" hreflang="en" />
+	<link rel="alternate" href="http://tanya.moe/#zh-Hant" hreflang="zh-Hant" />
+	<link rel="alternate" href="http://tanya.moe/#zh-Hans" hreflang="zh-Hans" />
+
+	<title>Tanya: The best Waifu. Ever.</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" crossorigin="anonymous" />
+	<link href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" rel="stylesheet" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous" />
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet" crossorigin="anonymous" />
+	<link href="app.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div i18n-group="main-intro" class="intro">
+		<div class="main">
+			<div class="back-overlay"></div>
+
+			<div class="title">
+				<h1 i18n="name" id="logo">Tanya</h1>
+				<p>ターニャ・フォン・デグレチャフ</p>
+				<h2 i18n="best-waifu-ever">The best Waifu. <b>Ever.</b></h2>
+
+				<div class="button-container">
+					<span>
+						<a i18n="join-discord" class="button discord" href="https://discord.gg/vpeNAC9"><i class="fab fa-discord"></i>Join the Discord</a><br>
+						<span id="discord-count" i18n="discord-count">
+							<span id="discord-number"></span> members
+						</span>
+					</span>
+
+					<span>
+						<a i18n="join-reddit" class="button reddit" href="https://www.reddit.com/r/YoujoSenki/"><i class="fab fa-reddit-alien"></i>Join the Subreddit</a><br>
+						<span id="reddit-count" i18n="reddit-count">
+							<span id="reddit-number"></span> subscribers
+						</span>
+					</span>
+
+					<br>
+
+					<span i18n="language-warning" class="small translate-only">(These communities use English as their primary language)</span>
+				</div>
+
+				<span i18n="scroll-notice" class="scroll-notice"><i class="fas fa-arrow-down"></i>Scroll to learn more!</span>
+
+			</div>
+
+			<div class="language-select">
+				<div id="language-protip" i18n-skip>
+					<span id="language-protip-text" i18n="language-protip">
+						Would you like to view this website in <b>English</b>?<br>
+						Use this drop-down to select a language!
+					</span>
+
+					<i id="close-language-protip" class="fas fa-times"></i>
+				</div>
+				<div class="select-wrapper">
+					<div i18n="language-select" class="select-button">
+						Language
+						<i class="fas fa-angle-down"></i>
+					</div>
+					<select id="locale-select" lang="mul">
+						<option title="English" value="default" lang="en">English</option>
+						<option disabled title="Chinese (Traditional)" value="zh-Hant" lang="zh-Hans">繁體中文</option>
+						<option disabled title="Chinese (Simplified)" value="zh-Hans" lang="zh-Hans">简体中文</option>
+					</select>
+				</div>
+			</div>
+			<div i18n="credits" class="footer">
+				A School Project which is <del>not</del> created <b title="Kenyérlángos">ikuper</b>
+			</div>
+
+			<canvas class="snow full canvas-background"></canvas>
+		</div>
+
+		<div class="music-player-container" id="music-player-container" i18n-group="music-player">
+			<div class="music-player display-intro" id="music-player">
+				<div class="play-controller">
+					<i class="fas fa-play"></i>
+				</div>
+				<div class="intro-text" i18n-group="intro">
+					<b i18n="bold-text">Wanna listen to some depressing song while browsing this page?</b>
+					<span class="small" i18n="small-text">Press the play button on the left!</span>
+				</div>
+
+				<div class="loading">
+					<i class="fas fa-spinner fa-pulse"></i>
+				</div>
+
+				<div class="music-details">
+					<div class="name" i18n-group="metadata">
+						<span class="title" i18n="title">Sensen No Realism </span>
+						<span class="author" i18n="author">Mako Niina</span>
+					</div>
+
+						<div class="countdown small hidden" i18n="countdown">Satania sings in <span id="time-until-satania"></span> seconds.</div>
+
+					<div class="time-controller">
+						<div class="time-bar">
+							<div class="elapsed">
+								<div class="slider-tip"></div>
+							</div>
+						</div>
+
+						<div class="volume">
+							<i class="fas fa-volume-down"></i>
+
+							<div class="volume-box">
+								<div class="volume-bar">
+									<div class="volume-fill">
+										<div class="volume-tip"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="time-progression"></div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<p i18n="footer">
+				You can also listen on <a href="https://www.youtube.com/watch?v=0ZiIyRvhQcw">YouTube</a>.
+			</p>
+
+			<div id="satania-dance"></div>
+
+			<canvas id="sound-visualizer"></canvas>
+		</div>
+	</div>
+
+	<div class="scroll">
+		<div i18n-group="become-a-tanya-follower" class="section">
+			<div class="left image">
+				<img src="img/tanya_go.psd" alt="" />
+			</div>
+
+			<div class="right">
+				<h2 i18n="large-text">The Devil of Rhine</h2>
+				<p i18n="sub-text">Fatherland...War...Officer...Empire Likes borders...<b> Commited Mild war crimes</b></p>
+				<span i18n="small-text" class="small">Clearly NOT Loli Hitler. Tanya did nothing wrong<b> ever. </b> Her action may be morally questionable but they are all legal.</span>
+			</div>
+		</div>
+
+		<div i18n-group="she-is-beautiful" class="section">
+			<div class="left">
+				<h2 i18n="large-text">A lovely smile.<br /> Two magnificent eyes.<br /> A stunning appearance.</h2>
+				<p i18n="sub-text">She's a really <b>pulchritudinous</b> person</p>
+				<span i18n="small-text" class="small">We Tanya followers are very cultured people, so we only use a very cultured language</span>
+			</div>
+
+			<div class="right image">
+				<img src="img/tanya_cute.png" alt="" />
+			</div>
+		</div>
+
+		<div i18n-group="end-the-waifu-war" class="section">
+			<div class="left image">
+				<img src="img/tanya_lewd.png" alt="" />
+			</div>
+
+			<div class="right">
+				<h2 i18n="large-text">The best devil Waifu just&nbsp;for&nbsp;you.</h2>
+				<p i18n="sub-text">Let's end the waifu war with the <b>most kawaii devil in the world</b>!</p>
+			</div>
+		</div>
+
+		<div class="section">
+			<div i18n-group="she-is-perfect" class="center">
+				<h2 i18n="large-text">In short, she's just perfect.</h2>
+				<p i18n="sub-text">Even Google knows.</p>
+
+				<div id="searchbar" class="google-searchbar">
+					<span i18n="searchbar-name">tanya</span>
+
+					<div class="buttons">
+						<img id="search-by-voice" src="img/google_mic.png" height="24px" />
+						<img id="search-button" src="img/google_search.svg" height="24px" />
+					</div>
+				</div><br />
+
+				<div i18n-group="google-definition" class="google-definition">
+					<h1 i18n="name" id="definition-name">perfection</h1>
+					<h3><span i18n="prononciation">/pəˈfɛkʃ(ə)n/</span> <i id="listen" class="fas fa-volume-up"></i></h3>
+
+					<div i18n="noun" class="noun">
+						noun
+					</div>
+
+					<div i18n-group="definition-1" class="definition no-bullet">
+						<span i18n="definition">the state or quality of being perfect.</span>
+						<div class="example">
+							<span i18n="example">"the satiny perfection of <b>Tanya</b>'s skin"</span>
+							<div class="synonyms">
+								<span><i i18n="synonyms">synonyms:</i></span>
+								<span i18n="synonyms-list">Tanya, flawlessness, excellence, superbness, sublimity, exquisiteness, magnificence, perfectness, faultlessness, impeccability, immaculateness, exemplariness<br/>
+								"the satiny perfection of her skin"</span>
+							</div>
+						</div>
+					</div>
+
+					<div i18n-group="definition-2" class="definition">
+						<span i18n="definition">a person or thing considered to be perfect.</span>
+						<div class="example">
+							<span i18n="example">"<b>Tanya</b>'s' kawaii laugh"</span>
+							<div class="synonyms">
+								<span><i i18n="synonyms">synonyms:</i></span>
+								<span i18n="synonyms-list">Tanya, the ideal, a paragon, the ne plus ultra, the beau idéal, a nonpareil, the crème de la crème, the last word, the ultimate, a dream; <i>informal</i> one in a million, the tops, the best/greatest thing since sliced melon bread, the bee's knees; <i>archaic</i> a nonesuch<br/>
+								"for her, he was still perfection"</span>
+							</div>
+						</div>
+					</div>
+
+					<div i18n-group="definition-3" class="definition">
+						<span i18n="definition">the action or process of improving something until it is faultless.</span>
+						<div class="example">
+							<span i18n="example">"I worked all day on the perfection of my <b>Tanya</b> drawing"</span>
+							<div class="synonyms">
+								<span><i i18n="synonyms">synonyms:</i></span>
+								<span i18n="synonyms-list">Tanya, improvement, betterment, refinement, refining, perfecting, polishing, amelioration; <i>rare</i> melioration<br/>
+								"the perfection of new mechanisms of economic management"</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div i18n-group="no-one-can-compete" class="section">
+			<div class="center">
+				<h2 i18n="large-text">No one can compete.</h2>
+				<p i18n="sub-text">Just think about it, why would Visha, Marry or <del>Loliya</del> be the best?</p>
+
+				<table i18n-group="table">
+					<thead>
+						<tr i18n-group="names">
+							<th i18n="cathegory" class="cathegory"></th>
+							<th i18n="tanya" class="highlight">Tanya</th>
+							<th i18n="visha">Visha</th>
+							<th i18n="marry">Marry</th>
+							<th i18n="loliya">Loliya</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr i18n-group="prevent-war">
+							<td i18n="cathegory" class="cathegory">Peaceful individual who wanted to prevent a total war</td>
+							<td class="highlight">
+								<i class="fas fa-check"></i>
+								<span i18n="tanya" class="small">(Don't want to waste human resources)</span>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+
+
+						<tr i18n-group="goals-in-life">
+							<td i18n="cathegory" class="cathegory">Has goals in life</td>
+							<td class="highlight">
+								<i class="fas fa-check"></i>
+								<span i18n="tanya" class="small">(Beating Being X)</span>
+							</td>
+							<td></td>
+							<td><span i18n="vignette" class="small">Kinda?</span></td>
+							<td></td>
+						</tr>
+
+						<tr i18n-group="powerfull-allies">
+							<td i18n="cathegory" class="cathegory">Has powerful allies</td>
+							<td class="highlight">
+								<i class="fas fa-check"></i>
+								<span i18n="satania" class="small">( Her Mage Battalion and Visha <3)</span>
+							</td>
+							<td>
+								<i class="fas fa-check"></i>
+								<span i18n="vignette" class="small">(Tanya?) <del>I ship them </del></span>
+							</td>
+							<td></td>
+							<td></td>
+						</tr>
+
+						<tr i18n-group="tragic-backstory">
+							<td i18n="cathegory" class="cathegory">Did nothing wrong</td>
+							<td class="highlight">
+								<i class="fas fa-check"></i>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td i18n="member-favorites" class="cathegory">Number of member favorites on MAL*</td>
+							<td class="highlight">5158</td>
+							<td>103</td>
+							<td>2</td>
+							<td>0</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<span i18n="as-of">*As of <span id="last-updated"></span></span>
+			</div>
+		</div>
+
+
+		<div i18n-group="fanarts" class="section">
+			<div class="left image slideshow">
+				<img height="500px" href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=61493847" class="shown" src="img/fanarts/fanart1.jpg" alt="" />
+				<img height="500px" href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=70790812" src="img/fanarts/fanart2.png" alt="" />
+				<img height="500px" href="http://www.pictaram.me/user/miikunatsume/6276597189" src="img/fanarts/fanart3.jpg" alt="" />
+				<img height="500px" href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=62019981" src="img/fanarts/fanart4.png" alt="" />
+				<img height="500px" href="https://danbooru.donmai.us/posts/2847135" src="img/fanarts/fanart5.jpg" alt="" />
+				<img height="500px" href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=61951530" src="img/fanarts/fanart6.png" alt="" />
+				<img height="500px" href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=65691875" src="img/fanarts/fanart7.jpg" alt="" />
+				<img height="500px" href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=65135711" src="img/fanarts/fanart8.jpg" alt="" />
+				<img height="500px" href="https://medibang.com/u/DasAdeline" src="img/fanarts/fanart9.png" alt="" />
+				<a i18n="source" class="source">Source</a>
+			</div>
+
+			<div class="right">
+				<h2 i18n="large-text">Fanarts that are impossibly&nbsp;kawaii!</h2>
+				<p i18n="sub-text">Just look at this, this is adorable. <noscript>Slideshow requires JavaScript.</noscript></p>
+			</div>
+		</div>
+
+		<div i18n-group="poke" class="section background" style="background-image: url('img/poke.jpg');min-height: 50vw;">
+			<div class="back-overlay"></div>
+			<div class="center">
+				<h2 i18n="large-text">Even Soliders from Francois Republic loves Tanya.</h2>
+				<p i18n="sub-text">"I join the army so I can meet Tanya on the battlefield. I would do anything to meet my waifu, Tanya! Even if I have to sacrifice my li-!" </p>
+			</div>
+		</div>
+
+		<div i18n-group="large-text" class="section">
+			<div class="left image">
+				<img src="img/tanya_lazy.jpg" alt="" />
+			</div>
+
+			<div class="right">
+				<h2 i18n="large-text">She's gonna rule over humanity anyway...</h2>
+				<p i18n="sub-text">So, whether you like her or not,<br /> you'll have to praise her eventually...<del>Just look at her dab...</del></p>
+			</div>
+		</div>
+
+		<div i18n-group="end" class="main end">
+			<div class="back-overlay"></div>
+
+			<div class="title">
+				<h1 i18n="large-text">She's the Best.</h1>
+				<h2 i18n="sub-text">Period. The end.</h2>
+			</div>
+
+			<div class="footer">
+				<a href="https://github.com/Pizzacus/satania.moe"><img src="img/github_link.png" alt="" /></a>
+			</div>
+
+			<canvas class="snow full canvas-background"></canvas>
+		</div>
+	</div>
+
+	<script src="vendor.js"></script>
+	<script src="app.js"></script>
+
+	<script>
+		const startSnow = require('snow');
+
+		require('script');
+		require('translate');
+		require('music-player');
+	</script>
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-101177248-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+</body>
+
+</html>
