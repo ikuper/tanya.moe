@@ -5,7 +5,7 @@
 	text-align: center;
 	padding: 25px;
 	padding: 30px;
-	background: rgba(17, 0, 0, 0.666);
+	background: rgba(0, 12, 5, 0.666);
 	color: #fff;
 	position: relative;
 	z-index: 999;
@@ -595,35 +595,4 @@ table {
 		background: #F5F5F5;
 		box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 	}
-
-	input.card-toogle:checked ~ & {
-		background: #EEE;
-		width: 240px;
-		height: 360px;
-		margin: 5px;
-		padding: 20px;
-
-		.question {
-			display: none;
-		}
-
-		.answer {
-			display: block;
-		}
 	}
-
-	// because of CSS selector prioritization, this repettion is needed
-	&:active,
-	input.card-toogle:checked ~ &:active {
-		background: #E5E5E5;
-		width: 220px;
-		height: 340px;
-		margin: 15px;
-		padding: 10px;
-	}
-
-	.answer {
-		display: none;
-		font-size: 20px;
-	}
-}

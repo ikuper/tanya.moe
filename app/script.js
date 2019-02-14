@@ -130,7 +130,7 @@ window.onload = () => {
 	observer.observe(document.body, {
 		attributes: true,
 		childList: true,
-		characterData: true,
+		characterData: false,
 		subtree: true
 	});
 }
