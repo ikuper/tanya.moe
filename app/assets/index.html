@@ -79,16 +79,16 @@
 	<meta name="author" content="ikuper">
 	<meta name="theme-color" content="#374B40">
 
-	<link rel="icon" sizes="192x192" href="http://tanya.moe/img/favicon_big.png">
-	<link rel="apple-touch-icon" href="https://tanya.moe/img/favicon_big.png">
-	<meta name="msapplication-square310x310logo" content="http://tanya.moe/img/favicon_big.png">
+	<link rel="icon" sizes="192x192" href="https://i.imgur.com/hnLPAtz.png">
+	<link rel="apple-touch-icon" href="https://i.imgur.com/hnLPAtz.png">
+	<meta name="msapplication-square310x310logo" content="https://i.imgur.com/hnLPAtz.png">
 
 	<meta property="og:title" content="Tanya: The best Waifu. Ever." />
 	<meta property="og:url" content="http://tanya.moe" />
 	<meta property="og:type" content="website" />
 	<meta property="og:description" content="Youjo Senki is a good show, no really, it is, if you don't believe me, this website will convince you." />
 
-	<meta property="og:image" content="http://tanya.moe/img/favicon_big.png" />
+	<meta property="og:image" content="https://i.imgur.com/hnLPAtz.png" />
 	<meta property="og:image:width" content="425" />
 	<meta property="og:image:height" content="425" />
 
@@ -155,7 +155,7 @@
 					</div>
 					<select id="locale-select" lang="mul">
 						<option title="English" value="default" lang="en">English</option>
-						<option disabled title="Chinese (Traditional)" value="zh-Hant" lang="zh-Hans">繁體中文</option>
+						<option disabled title="Chinese (Traditional)" value="zh-Hant" lang="zh-Hant">繁體中文</option>
 						<option disabled title="Chinese (Simplified)" value="zh-Hans" lang="zh-Hans">简体中文</option>
 					</select>
 				</div>
@@ -187,7 +187,7 @@
 						<span class="author" i18n="author">Mako Niina</span>
 					</div>
 
-						<div class="countdown small hidden" i18n="countdown">Satania sings in <span id="time-until-satania"></span> seconds.</div>
+						<div class="countdown small hidden" i18n="countdown">sings in <span id="time-until-satania"></span> seconds.</div>
 
 					<div class="time-controller">
 						<div class="time-bar">
@@ -219,7 +219,6 @@
 				You can also listen on <a href="https://www.youtube.com/watch?v=0ZiIyRvhQcw">YouTube</a>.
 			</p>
 
-			<div id="satania-dance"></div>
 
 			<canvas id="sound-visualizer"></canvas>
 		</div>
@@ -358,7 +357,7 @@
 								<span i18n="tanya" class="small">(Beating Being X)</span>
 							</td>
 							<td></td>
-							<td><span i18n="vignette" class="small">Kinda?</span></td>
+							<td><span i18n="marry" class="small">Kinda?</span></td>
 							<td></td>
 						</tr>
 
@@ -366,11 +365,11 @@
 							<td i18n="cathegory" class="cathegory">Has powerful allies</td>
 							<td class="highlight">
 								<i class="fas fa-check"></i>
-								<span i18n="satania" class="small">( Her Mage Battalion and Visha <3)</span>
+								<span i18n="tanya" class="small">(Her Mage Battalion and Visha <3)</span>
 							</td>
 							<td>
 								<i class="fas fa-check"></i>
-								<span i18n="vignette" class="small">(Tanya?) <del>I ship them </del></span>
+								<span i18n="visha" class="small">(Tanya?) <del>I ship them </del></span>
 							</td>
 							<td></td>
 							<td></td>
@@ -424,8 +423,8 @@
 		<div i18n-group="poke" class="section background" style="background-image: url('img/poke.jpg');min-height: 50vw;">
 			<div class="back-overlay"></div>
 			<div class="center">
-				<h2 i18n="large-text">Even Soliders from Francois Republic loves Tanya.</h2>
-				<p i18n="sub-text">"I join the army so I can meet Tanya on the battlefield. I would do anything to meet my waifu, Tanya! Even if I have to sacrifice my li-!" </p>
+				<h2 i18n="large-text">Even the citizens from the Francois Republic love Tanya.</h2>
+				<p i18n="sub-text">"I would do anything to meet my waifu, Tanya! Even if I have to sacrifice my li-!" </p>
 			</div>
 		</div>
 
@@ -449,7 +448,7 @@
 			</div>
 
 			<div class="footer">
-				<a href="https://github.com/Pizzacus/satania.moe"><img src="img/github_link.png" alt="" /></a>
+				<a href="https://github.com/ikuper/tanya.moe"><img src="img/github_link.png" alt="" /></a>
 			</div>
 
 			<canvas class="snow full canvas-background"></canvas>
@@ -466,23 +465,17 @@
 		require('translate');
 		require('music-player');
 	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130212474-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-	<script>
-		(function(i, s, o, g, r, a, m) {
-			i['GoogleAnalyticsObject'] = r;
-			i[r] = i[r] || function() {
-				(i[r].q = i[r].q || []).push(arguments)
-			}, i[r].l = 1 * new Date();
-			a = s.createElement(o),
-				m = s.getElementsByTagName(o)[0];
-			a.async = 1;
-			a.src = g;
-			m.parentNode.insertBefore(a, m)
-		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  gtag('config', 'UA-130212474-1');
+</script>
 
-		ga('create', 'UA-101177248-1', 'auto');
-		ga('send', 'pageview');
-	</script>
+
 </body>
 
 </html>
